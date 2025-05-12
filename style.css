@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.install-btn {
+    background-color: #2ecc71;
+}
+
+.install-btn:hover {
+    background-color: #27ae60;
+}
+
+.notify-btn {
+    background-color: #e67e22;
+}
+
+.notify-btn:hover {
+    background-color: #d35400;
+}
+
+.filter-btn {
+    background-color: #95a5a6;
+}
+
+.filter-btn.active {
+    background-color: #7f8c8d;
+    font-weight: bold;
+}
+
+.offline-status {
+    background-color: #ffeb3b;
+    color: #333;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.controls {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.note-form {
+    margin-bottom: 20px;
+}
+
+#note-input {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.completed-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    color: #7f8c8d;
+}
+
+#add-note-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.note {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.note.completed {
+    opacity: 0.7;
+    border-left: 4px solid #2ecc71;
+}
+
+.note-text {
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+}
+
+.note-date {
+    font-size: 12px;
+    color: #95a5a6;
+    margin-bottom: 10px;
+}
+
+.note-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.toggle-complete-btn {
+    background-color: #2ecc71;
+}
+
+.toggle-complete-btn:hover {
+    background-color: #27ae60;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

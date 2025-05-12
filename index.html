@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Офлайн Заметки</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./icons/icon-192x192.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Умные Заметки</h1>
+            <div id="offline-status" class="offline-status">Офлайн-режим</div>
+            <button id="install-btn" class="btn install-btn">Установить приложение</button>
+            <button id="notify-btn" class="btn notify-btn">Включить уведомления</button>
+        </header>
+
+        <div class="controls">
+            <div class="filter-buttons">
+                <button class="btn filter-btn active" data-filter="all">Все</button>
+                <button class="btn filter-btn" data-filter="active">Активные</button>
+                <button class="btn filter-btn" data-filter="completed">Выполненные</button>
+            </div>
+        </div>
+
+        <div class="note-form">
+            <textarea id="note-input" placeholder="Введите текст заметки..."></textarea>
+            <button id="add-note-btn" class="btn">Добавить</button>
+            <label class="completed-checkbox">
+                <input type="checkbox" id="completed-input">
+                Выполнено
+            </label>
+        </div>
+
+        <div id="notes-list" class="notes-list">
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
